@@ -262,9 +262,9 @@ export default function App() {
           </nav>
 
           <div className="hidden lg:block shrink-0">
-            <button onClick={() => openEnquiry("apply")} className="inline-flex items-center gap-2 rounded-full bg-navy px-5 py-2.5 text-xs xl:text-sm font-semibold text-white shadow-soft transition-all hover:scale-[1.03] cursor-pointer">
-              Apply Now <ArrowRight className="h-4 w-4" />
-            </button>
+            <a href="#campus" className="text-xs xl:text-sm font-bold text-black hover:text-[#800020] transition-colors tracking-wide shrink-0 whitespace-nowrap">
+              Gallery
+            </a>
           </div>
 
           <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden text-navy p-1" aria-label="Menu">
@@ -318,7 +318,7 @@ export default function App() {
                   )}
                 </div>
               ))}
-              <button onClick={() => openEnquiry("apply")} className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-white">Apply Now</button>
+              <a href="#campus" onClick={() => setMenuOpen(false)} className="mt-2 inline-flex items-center justify-center gap-2 text-sm font-bold text-navy hover:text-gold transition-colors py-2.5">Gallery</a>
             </div>
           </div>
         )}
