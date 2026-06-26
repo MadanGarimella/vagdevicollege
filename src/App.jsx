@@ -348,7 +348,7 @@ export default function App() {
             {/* LEFT */}
             <div className="animate-fade-up">
               <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1 text-xs font-bold text-navy shadow-soft border border-navy/5">
-                ★ ADMISSIONS OPEN 2025-26
+                ★ ADMISSIONS OPEN 2026-27
               </span>
 
               <h1 className="mt-6 font-display text-[2.75rem] sm:text-5xl lg:text-[3.8rem] font-medium leading-[1.1] text-navy tracking-tight">
