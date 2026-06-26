@@ -324,34 +324,26 @@ export default function App() {
         )}
       </header>
 
-      {/* HERO - Re-architected to Premium Reference Model */}
-      <section className="relative isolate pt-28 pb-16 lg:pt-36 lg:pb-24 bg-gradient-soft overflow-hidden">
-        {/* Background Greek Façade Column Sketch outline */}
-        <div className="absolute left-[3%] top-[15%] w-80 h-96 opacity-[0.03] pointer-events-none select-none text-navy z-0 hidden lg:block">
-          <svg viewBox="0 0 100 120" fill="none" stroke="currentColor" strokeWidth="0.5">
-            <path d="M10 110 h80 M15 110 V30 M30 110 V30 M45 110 V30 M60 110 V30 M75 110 V30 M85 110 V30 M10 30 h80 M15 30 L50 5 L85 30" />
-            <line x1="10" y1="113" x2="90" y2="113" />
-            <line x1="5" y1="116" x2="95" y2="116" />
-          </svg>
+      {/* HERO - Single Background Image Model */}
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden min-h-[85vh] flex items-center">
+        {/* Background Image with Dark Overlay */}
+        <div className="absolute inset-0 z-0">
+          <img src={heroCampus} alt="Vagdevi Campus" className="h-full w-full object-cover object-center" />
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy/80 to-navy/35 lg:to-navy/20"></div>
+          {/* Subtle Dots Overlay Grid */}
+          <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:20px_20px] opacity-40" />
         </div>
 
-        {/* Premium Graphic Accents & Wave Swirls at Corners */}
-        <div className="absolute -bottom-12 -left-12 w-64 h-64 rounded-full bg-[#800020]/5 blur-2xl z-0 pointer-events-none" />
-        <div className="absolute -bottom-16 -right-16 w-80 h-80 rounded-full bg-[#800020]/10 blur-3xl z-0 pointer-events-none" />
-
-        {/* Subtle Dots Overlay Grid */}
-        <div className="absolute inset-0 bg-[radial-gradient(#80808008_1px,transparent_1px)] [background-size:20px_20px] opacity-100 -z-10" />
-
-        <div className="mx-auto max-w-7xl px-5 lg:px-8 relative z-10">
+        <div className="mx-auto max-w-7xl px-5 lg:px-8 relative z-10 w-full">
           <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             
             {/* LEFT */}
             <div className="animate-fade-up">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-3.5 py-1 text-xs font-bold text-navy shadow-soft border border-navy/5">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold text-white border border-white/15 backdrop-blur">
                 ★ ADMISSIONS OPEN 2026-27
               </span>
 
-              <h1 className="mt-6 font-display text-[2.75rem] sm:text-5xl lg:text-[3.8rem] font-medium leading-[1.1] text-navy tracking-tight">
+              <h1 className="mt-6 font-display text-[2.75rem] sm:text-5xl lg:text-[3.8rem] font-medium leading-[1.1] text-white tracking-tight">
                 Where <span className="italic font-display text-gold">Excellence</span> Meets
                 <br />
                 Opportunity.
@@ -359,60 +351,37 @@ export default function App() {
 
               {/* Custom divider with shield logo */}
               <div className="my-6 flex items-center gap-4">
-                <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-navy/20 to-navy/10" />
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#800020] shadow-soft">
-                  <img src={logo} alt="Shield Emblem" className="h-6 w-6 object-contain brightness-0 invert" />
+                <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-white/20 to-white/10" />
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold shadow-soft">
+                  <img src={logo} alt="Shield Emblem" className="h-6 w-6 object-contain brightness-0" />
                 </div>
-                <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-navy/20 to-navy/10" />
+                <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-white/20 to-white/10" />
               </div>
 
-              <p className="max-w-xl text-sm sm:text-base leading-relaxed text-muted-foreground">
+              <p className="max-w-xl text-sm sm:text-base leading-relaxed text-white/80">
                 Vagdevi Degree College (Autonomous) — a premier institution in Narsaraopet, Andhra Pradesh, shaping future-ready graduates through academic rigour, research and industry-integrated learning. Affiliated to Acharya Nagarjuna University.
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4">
                 <button onClick={() => openEnquiry("apply")}
-                  className="inline-flex items-center gap-2 rounded-lg bg-[#800020] px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-soft transition-all hover:scale-[1.02] hover:bg-[#600018] cursor-pointer">
+                  className="inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-navy shadow-soft transition-all hover:scale-[1.02] hover:bg-gold-soft cursor-pointer">
                   Apply Now <ArrowRight className="h-4 w-4" />
                 </button>
                 <button onClick={() => openEnquiry("brochure")}
-                  className="inline-flex items-center gap-2 rounded-lg border border-navy/15 bg-white px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-navy shadow-soft hover:bg-navy/5 transition-all cursor-pointer">
+                  className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-soft hover:bg-white/20 transition-all cursor-pointer backdrop-blur">
                   <Compass className="h-4 w-4 text-gold" /> Virtual Campus Tour
                 </button>
               </div>
             </div>
 
-            {/* RIGHT - Overlapping Premium Arched Images */}
-            <div className="relative animate-fade-up flex flex-col items-center lg:items-end gap-6">
-              {/* Trust Badge Container */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white/95 border border-border p-4 rounded-xl max-w-md shadow-elegant backdrop-blur w-full">
-                <img src={naacIsoBadge} alt="NAAC Accredited B+ Grade & ISO 9001:2015 certified" className="h-14 sm:h-16 object-contain mx-auto sm:mx-0" />
-                <div className="border-t sm:border-t-0 sm:border-l border-border pt-2 sm:pt-0 sm:pl-4">
-                  <div className="text-[10px] font-bold text-navy uppercase tracking-wider">Institution Credentials</div>
-                  <div className="text-xs font-bold text-[#800020] mt-0.5">Accredited B+ by NAAC & ISO Certified</div>
-                  <p className="text-[11px] text-muted-foreground mt-0.5 leading-tight">Meeting standard qualities in academic excellence.</p>
-                </div>
-              </div>
-
-              {/* Images Container */}
-              <div className="relative flex justify-center lg:justify-end w-full">
-                {/* Arched Window main image */}
-                <div className="relative h-[340px] w-[260px] sm:h-[400px] sm:w-[300px] overflow-hidden rounded-t-full border-4 border-white shadow-elegant z-10 bg-white">
-                  <img src={heroCampus} alt="Vagdevi Campus" className="h-full w-full object-cover" />
-                </div>
-
-                {/* Overlapping rectangular card showing library/interior */}
-                <div className="absolute bottom-6 -left-2 sm:-left-6 h-[170px] w-[200px] sm:h-[200px] sm:w-[240px] overflow-hidden rounded-2xl border-4 border-white shadow-elegant z-20 bg-white">
-                  <img src={campusLibrary} alt="Vagdevi Campus Library" className="h-full w-full object-cover" />
-                </div>
-
-                {/* Overlapping Accreditation tag */}
-                <div className="absolute bottom-16 right-4 sm:right-10 bg-white border border-border px-4 py-2.5 rounded-xl shadow-elegant z-30 flex items-center gap-3 animate-pulse">
-                  <div className="text-gold font-bold text-lg">★</div>
-                  <div>
-                    <div className="text-[10px] uppercase font-bold text-navy-deep tracking-wider">NAAC Accredited</div>
-                    <div className="text-xs font-extrabold text-[#800020]">B+ Grade</div>
-                  </div>
+            {/* RIGHT - Floating Credentials Glass Card */}
+            <div className="relative animate-fade-up flex justify-center lg:justify-end">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white/10 border border-white/15 p-6 rounded-2xl max-w-md shadow-elegant backdrop-blur-md">
+                <img src={naacIsoBadge} alt="NAAC Accredited B+ Grade & ISO 9001:2015 certified" className="h-16 object-contain mx-auto sm:mx-0 bg-white/90 p-2.5 rounded-xl shadow-soft" />
+                <div className="border-t sm:border-t-0 sm:border-l border-white/10 pt-4 sm:pt-0 sm:pl-4">
+                  <div className="text-[10px] font-bold text-gold uppercase tracking-wider">Institution Credentials</div>
+                  <div className="text-sm font-bold text-white mt-0.5">Accredited B+ by NAAC & ISO Certified</div>
+                  <p className="text-xs text-white/70 mt-1 leading-normal font-medium">Meeting standard qualities in academic excellence.</p>
                 </div>
               </div>
             </div>
