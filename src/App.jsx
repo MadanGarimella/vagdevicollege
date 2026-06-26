@@ -94,7 +94,8 @@ const NAV = [
       { label: "Admission Form", href: "#admissions" }
     ]
   },
-  { label: "Contact", href: "#contact" }
+  { label: "Contact", href: "#contact" },
+  { label: "Gallery", href: "#Gallery" }
 ];
 
 const COURSES = [
@@ -264,11 +265,7 @@ export default function App() {
             ))}
           </nav>
 
-          <div className="hidden lg:block shrink-0">
-            <a href="#campus" className="text-xs xl:text-sm font-bold text-black hover:text-[#800020] transition-colors tracking-wide shrink-0 whitespace-nowrap">
-              Gallery
-            </a>
-          </div>
+
 
           <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden text-navy p-1" aria-label="Menu">
             {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -321,7 +318,7 @@ export default function App() {
                   )}
                 </div>
               ))}
-              <a href="#campus" onClick={() => setMenuOpen(false)} className="mt-2 inline-flex items-center justify-center gap-2 text-sm font-bold text-navy hover:text-gold transition-colors py-2.5">Gallery</a>
+
             </div>
           </div>
         )}
