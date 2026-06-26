@@ -324,9 +324,14 @@ export default function App() {
         )}
       </header>
 
-      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden min-h-[85vh] flex items-center bg-gradient-soft">
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden min-h-[85vh] flex items-center bg-gradient-to-tr from-navy/5 via-white to-gold/5">
         {/* Subtle Dots Overlay Grid */}
-        <div className="absolute inset-0 bg-[radial-gradient(rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:20px_20px] opacity-100 z-0" />
+        <div className="absolute inset-0 bg-[radial-gradient(rgba(0,0,0,0.03)_1px,transparent_1px)] [background-size:20px_20px] opacity-100 z-0" />
+
+        {/* Ambient Gradient Glow Blobs */}
+        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-gold/10 blur-[100px] pointer-events-none z-0" />
+        <div className="absolute top-1/2 left-1/3 w-80 h-80 rounded-full bg-royal/5 blur-[120px] pointer-events-none z-0" />
+        <div className="absolute -bottom-20 right-10 w-96 h-96 rounded-full bg-gold/15 blur-[100px] pointer-events-none z-0" />
 
         <div className="mx-auto max-w-7xl px-5 lg:px-8 relative z-10 w-full">
           <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
