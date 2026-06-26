@@ -24,14 +24,74 @@ import naacIsoBadge from "@/assets/naac-iso-badge.png";
 
 const NAV = [
   { label: "Home", href: "#home" },
-  { label: "Academics", href: "#academics" },
-  { label: "Courses", href: "#courses" },
-  { label: "Why Vagdevi", href: "#why" },
-  { label: "Placements", href: "#placements" },
-  { label: "Campus Life", href: "#campus" },
-  { label: "Exams Cell", href: "#exams" },
-  { label: "Admissions", href: "#admissions" },
-  { label: "Contact", href: "#contact" },
+  { 
+    label: "Academic", 
+    href: "#academics",
+    dropdown: [
+      { label: "Courses Offered", href: "#courses" },
+      { label: "Departments", href: "#academics" },
+      { label: "Faculty", href: "#why" },
+      { label: "Academic Calendar", href: "#exams" },
+      { label: "Syllabus", href: "#academics" },
+      { label: "Course Plan", href: "#academics" },
+      { label: "Choice based credit System", href: "#academics" },
+      { label: "Value Added courses", href: "#courses" }
+    ]
+  },
+  { 
+    label: "Courses", 
+    href: "#courses",
+    dropdown: [
+      { label: "Placement Cell", href: "#placements" },
+      { label: "Library", href: "#campus" },
+      { label: "Career Guidance", href: "#why" },
+      { label: "National Service Scheme (NSS)", href: "#campus" },
+      { label: "E-Resources", href: "#campus" }
+    ]
+  },
+  { 
+    label: "Why Vagdevi", 
+    href: "#why",
+    dropdown: [
+      { label: "Guidelines for Admissions", href: "#admissions" },
+      { label: "Student Welfare", href: "#why" },
+      { label: "Scholarships", href: "#admissions" }
+    ]
+  },
+  { label: "Placements", 
+    href: "#placements",
+    dropdown: [
+      {label: "Placement Officer"},
+      {label: "Achievements"},
+      {label: "Campus Placement Partners"}
+    ]
+  },
+  { 
+    label: "Campus Life", 
+    href: "#campus",
+    dropdown: [
+      { label: "Alumni", href: "#campus" },
+      { label: "Student Committee", href: "#campus" },
+      { label: "Associations", href: "#campus" },
+      { label: "Certificates", href: "#why" }
+    ]
+  },
+  { 
+    label: "Exam Cell", 
+    href: "#exams",
+    dropdown: [
+      { label: "Notices", href: "#exams" },
+      { label: "Results", href: "#exams" }
+    ]
+  },
+  { label: "Admissions", 
+    href: "#admissions",
+    dropdown: [
+      {label: "Enquiry"},
+      {label: "Admission Form"}
+    ]
+  },
+  { label: "Contact", href: "#contact" }
 ];
 
 const COURSES = [
@@ -128,6 +188,7 @@ const GradCap = GraduationCap;
 export default function App() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileSubmenuOpen, setMobileSubmenuOpen] = useState(null);
   const [openFaq, setOpenFaq] = useState(0);
 
   const [modalOpen, setModalOpen] = useState(false);
@@ -169,12 +230,34 @@ export default function App() {
             </div>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-4 xl:gap-7 mx-4">
+          <nav className="hidden lg:flex items-center gap-2.5 xl:gap-5 mx-2">
             {NAV.map((n) => (
-              <a key={n.href} href={n.href}
-                className="text-xs xl:text-sm font-bold text-black hover:text-gold transition-colors tracking-wide shrink-0">
-                {n.label}
-              </a>
+              <div key={n.label} className="relative group py-2">
+                <a href={n.href}
+                  className="text-xs xl:text-sm font-bold text-black hover:text-[#800020] transition-colors tracking-wide shrink-0 whitespace-nowrap">
+                  {n.label}
+                </a>
+                {n.dropdown && (
+                  <div className="absolute top-[80%] left-1/2 -translate-x-1/2 pt-4 w-64 invisible opacity-0 translate-y-2 group-hover:visible group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 z-50 pointer-events-none group-hover:pointer-events-auto">
+                    <div className="bg-white/98 backdrop-blur-md rounded-xl shadow-elegant border border-navy/10 py-3 relative">
+                      <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-white rotate-45 border-t border-l border-navy/10"></div>
+                      <div className="relative z-10 flex flex-col">
+                        {n.dropdown.map((subItem) => (
+                          <a key={subItem.label} href={subItem.href}
+                            onClick={(e) => {
+                              if (subItem.href === "#") {
+                                e.preventDefault();
+                              }
+                            }}
+                            className="block px-5 py-2 text-xs xl:text-sm font-bold text-navy hover:text-gold hover:bg-navy/5 transition-colors whitespace-nowrap">
+                            {subItem.label}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
             ))}
           </nav>
 
@@ -190,10 +273,50 @@ export default function App() {
         </div>
 
         {menuOpen && (
-          <div className="lg:hidden bg-white border-t px-5 py-5 shadow-elegant">
+          <div className="lg:hidden bg-white border-t px-5 py-5 shadow-elegant max-h-[80vh] overflow-y-auto">
             <div className="flex flex-col gap-4">
               {NAV.map((n) => (
-                <a key={n.href} href={n.href} onClick={() => setMenuOpen(false)} className="text-sm font-bold text-navy hover:text-gold transition-colors">{n.label}</a>
+                <div key={n.label} className="flex flex-col">
+                  {n.dropdown ? (
+                    <div>
+                      <button
+                        onClick={() => setMobileSubmenuOpen(mobileSubmenuOpen === n.label ? null : n.label)}
+                        className="flex items-center justify-between w-full text-sm font-bold text-navy hover:text-gold transition-colors py-1"
+                      >
+                        <span>{n.label}</span>
+                        {mobileSubmenuOpen === n.label ? (
+                          <Minus className="h-4 w-4 text-navy/70" />
+                        ) : (
+                          <Plus className="h-4 w-4 text-navy/70" />
+                        )}
+                      </button>
+                      {mobileSubmenuOpen === n.label && (
+                        <div className="pl-4 mt-2 border-l border-navy/10 flex flex-col gap-2.5 py-1">
+                          {n.dropdown.map((subItem) => (
+                            <a
+                              key={subItem.label}
+                              href={subItem.href}
+                              onClick={() => {
+                                setMenuOpen(false);
+                              }}
+                              className="text-xs font-bold text-navy/80 hover:text-gold transition-colors"
+                            >
+                              {subItem.label}
+                            </a>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ) : (
+                    <a
+                      href={n.href}
+                      onClick={() => setMenuOpen(false)}
+                      className="text-sm font-bold text-navy hover:text-gold transition-colors py-1"
+                    >
+                      {n.label}
+                    </a>
+                  )}
+                </div>
               ))}
               <button onClick={() => openEnquiry("apply")} className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-navy px-5 py-2.5 text-sm font-semibold text-white">Apply Now</button>
             </div>
