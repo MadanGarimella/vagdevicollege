@@ -370,6 +370,16 @@ export default function App() {
                 Vagdevi Degree College (Autonomous) — a premier institution in Narsaraopet, Andhra Pradesh, shaping future-ready graduates through academic rigour, research and industry-integrated learning. Affiliated to Acharya Nagarjuna University.
               </p>
 
+              {/* Trust Badge Container */}
+              <div className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white/95 border border-border p-4 rounded-xl max-w-md shadow-elegant backdrop-blur">
+                <img src={naacIsoBadge} alt="NAAC Accredited B+ Grade & ISO 9001:2015 certified" className="h-14 sm:h-16 object-contain mx-auto sm:mx-0" />
+                <div className="border-t sm:border-t-0 sm:border-l border-border pt-2 sm:pt-0 sm:pl-4">
+                  <div className="text-[10px] font-bold text-navy uppercase tracking-wider">Institution Credentials</div>
+                  <div className="text-xs font-bold text-[#800020] mt-0.5">Accredited B+ by NAAC & ISO Certified</div>
+                  <p className="text-[11px] text-muted-foreground mt-0.5 leading-tight">Meeting standard qualities in academic excellence.</p>
+                </div>
+              </div>
+
               <div className="mt-8 flex flex-wrap gap-4">
                 <button onClick={() => openEnquiry("apply")}
                   className="inline-flex items-center gap-2 rounded-lg bg-[#800020] px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-soft transition-all hover:scale-[1.02] hover:bg-[#600018] cursor-pointer">
@@ -383,36 +393,23 @@ export default function App() {
             </div>
 
             {/* RIGHT - Overlapping Premium Arched Images */}
-            <div className="relative animate-fade-up flex flex-col items-center lg:items-end gap-6">
-              {/* Trust Badge Container */}
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white/95 border border-border p-4 rounded-xl max-w-md shadow-elegant backdrop-blur w-full">
-                <img src={naacIsoBadge} alt="NAAC Accredited B+ Grade & ISO 9001:2015 certified" className="h-14 sm:h-16 object-contain mx-auto sm:mx-0" />
-                <div className="border-t sm:border-t-0 sm:border-l border-border pt-2 sm:pt-0 sm:pl-4">
-                  <div className="text-[10px] font-bold text-navy uppercase tracking-wider">Institution Credentials</div>
-                  <div className="text-xs font-bold text-[#800020] mt-0.5">Accredited B+ by NAAC & ISO Certified</div>
-                  <p className="text-[11px] text-muted-foreground mt-0.5 leading-tight">Meeting standard qualities in academic excellence.</p>
-                </div>
+            <div className="relative animate-fade-up flex justify-center lg:justify-end">
+              {/* Arched Window main image */}
+              <div className="relative h-[340px] w-[260px] sm:h-[400px] sm:w-[300px] overflow-hidden rounded-t-full border-4 border-white shadow-elegant z-10 bg-white">
+                <img src={heroCampus} alt="Vagdevi Campus" className="h-full w-full object-cover" />
               </div>
 
-              {/* Images Container */}
-              <div className="relative flex justify-center lg:justify-end w-full">
-                {/* Arched Window main image */}
-                <div className="relative h-[340px] w-[260px] sm:h-[400px] sm:w-[300px] overflow-hidden rounded-t-full border-4 border-white shadow-elegant z-10 bg-white">
-                  <img src={heroCampus} alt="Vagdevi Campus" className="h-full w-full object-cover" />
-                </div>
+              {/* Overlapping rectangular card showing library/interior */}
+              <div className="absolute bottom-6 -left-2 sm:-left-6 h-[170px] w-[200px] sm:h-[200px] sm:w-[240px] overflow-hidden rounded-2xl border-4 border-white shadow-elegant z-20 bg-white">
+                <img src={campusLibrary} alt="Vagdevi Campus Library" className="h-full w-full object-cover" />
+              </div>
 
-                {/* Overlapping rectangular card showing library/interior */}
-                <div className="absolute bottom-6 -left-2 sm:-left-6 h-[170px] w-[200px] sm:h-[200px] sm:w-[240px] overflow-hidden rounded-2xl border-4 border-white shadow-elegant z-20 bg-white">
-                  <img src={campusLibrary} alt="Vagdevi Campus Library" className="h-full w-full object-cover" />
-                </div>
-
-                {/* Overlapping Accreditation tag */}
-                <div className="absolute bottom-16 right-4 sm:right-10 bg-white border border-border px-4 py-2.5 rounded-xl shadow-elegant z-30 flex items-center gap-3 animate-pulse">
-                  <div className="text-gold font-bold text-lg">★</div>
-                  <div>
-                    <div className="text-[10px] uppercase font-bold text-navy-deep tracking-wider">NAAC Accredited</div>
-                    <div className="text-xs font-extrabold text-[#800020]">B+ Grade</div>
-                  </div>
+              {/* Overlapping Accreditation tag */}
+              <div className="absolute bottom-16 right-4 sm:right-10 bg-white border border-border px-4 py-2.5 rounded-xl shadow-elegant z-30 flex items-center gap-3 animate-pulse">
+                <div className="text-gold font-bold text-lg">★</div>
+                <div>
+                  <div className="text-[10px] uppercase font-bold text-navy-deep tracking-wider">NAAC Accredited</div>
+                  <div className="text-xs font-extrabold text-[#800020]">B+ Grade</div>
                 </div>
               </div>
             </div>
