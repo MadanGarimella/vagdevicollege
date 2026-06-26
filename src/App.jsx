@@ -25,28 +25,17 @@ import naacIsoBadge from "@/assets/naac-iso-badge.png";
 const NAV = [
   { label: "Home", href: "#home" },
   { 
-    label: "Academic", 
+    label: "Academics", 
     href: "#academics",
     dropdown: [
       { label: "Courses Offered", href: "#courses" },
       { label: "Departments", href: "#academics" },
       { label: "Faculty", href: "#why" },
       { label: "Academic Calendar", href: "#exams" },
-      { label: "Syllabus", href: "#academics" },
+      { label: "Syllabus Copies", href: "#academics" },
       { label: "Course Plan", href: "#academics" },
       { label: "Choice based credit System", href: "#academics" },
-      { label: "Value Added courses", href: "#courses" }
-    ]
-  },
-  { 
-    label: "Courses", 
-    href: "#courses",
-    dropdown: [
-      { label: "Placement Cell", href: "#placements" },
-      { label: "Library", href: "#campus" },
-      { label: "Career Guidance", href: "#why" },
-      { label: "National Service Scheme (NSS)", href: "#campus" },
-      { label: "E-Resources", href: "#campus" }
+      { label: "Value Added Courses", href: "#courses" }
     ]
   },
   { 
@@ -55,7 +44,8 @@ const NAV = [
     dropdown: [
       { label: "Guidelines for Admissions", href: "#admissions" },
       { label: "Student Welfare", href: "#why" },
-      { label: "Scholarships", href: "#admissions" }
+      { label: "Scholarships", href: "#admissions" },
+      { label: "Admission Enquiry", href: "#admissions" }
     ]
   },
   { 
@@ -72,30 +62,23 @@ const NAV = [
     label: "Campus Life", 
     href: "#campus",
     dropdown: [
-      { label: "Alumni", href: "#campus" },
+      { label: "Alumni Association", href: "#campus" },
       { label: "Student Committee", href: "#campus" },
-      { label: "Associations", href: "#campus" },
-      { label: "Certificates", href: "#why" }
+      { label: "Associations & Clubs", href: "#campus" },
+      { label: "Central Library", href: "#campus" },
+      { label: "E-Resources", href: "#campus" },
+      { label: "Campus Gallery", href: "#campus" }
     ]
   },
   { 
     label: "Exam Cell", 
     href: "#exams",
     dropdown: [
-      { label: "Notices", href: "#exams" },
-      { label: "Results", href: "#exams" }
+      { label: "Notices & Circulars", href: "#exams" },
+      { label: "Results Portal", href: "#exams" }
     ]
   },
-  { 
-    label: "Admissions", 
-    href: "#admissions",
-    dropdown: [
-      { label: "Enquiry", href: "#admissions" },
-      { label: "Admission Form", href: "#admissions" }
-    ]
-  },
-  { label: "Contact", href: "#contact" },
-  { label: "Gallery", href: "#campus" }
+  { label: "Contact", href: "#contact" }
 ];
 
 const COURSES = [
@@ -234,11 +217,11 @@ export default function App() {
             </div>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-3.5 mx-1">
+          <nav className="hidden lg:flex items-center gap-3.5 xl:gap-6.5 mx-3">
             {NAV.map((n) => (
               <div key={n.label} className="relative group py-2">
                 <a href={n.href}
-                  className="text-[11px] xl:text-xs font-bold text-black hover:text-[#800020] transition-colors tracking-wide shrink-0 whitespace-nowrap">
+                  className="text-xs xl:text-sm font-bold text-black hover:text-[#800020] transition-colors tracking-wide shrink-0 whitespace-nowrap">
                   {n.label}
                 </a>
                 {n.dropdown && (
