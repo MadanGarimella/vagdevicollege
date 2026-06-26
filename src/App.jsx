@@ -382,7 +382,7 @@ export default function App() {
 
               {/* Rectangular Image */}
               <div className="w-full overflow-hidden rounded-3xl border border-border shadow-elegant">
-                <img src={heroCampus} alt="Vagdevi Campus" className="w-full aspect-[4/3] object-cover" />
+                <img src={campusLibrary} alt="Vagdevi Campus" className="w-full aspect-[4/3] object-cover" />
               </div>
             </div>
 
