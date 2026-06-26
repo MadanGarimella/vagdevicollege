@@ -30,12 +30,23 @@ const NAV = [
     dropdown: [
       { label: "Courses Offered", href: "#courses" },
       { label: "Departments", href: "#academics" },
-      { label: "Faculty & Staff", href: "#why" },
+      { label: "Faculty", href: "#why" },
       { label: "Academic Calendar", href: "#exams" },
-      { label: "Syllabus Copies", href: "#academics" },
+      { label: "Syllabus", href: "#academics" },
       { label: "Course Plan", href: "#academics" },
       { label: "Choice based credit System", href: "#academics" },
-      { label: "Value Added Courses", href: "#courses" }
+      { label: "Value Added courses", href: "#courses" }
+    ]
+  },
+  { 
+    label: "Courses", 
+    href: "#courses",
+    dropdown: [
+      { label: "Placement Cell", href: "#placements" },
+      { label: "Library", href: "#campus" },
+      { label: "Career Guidance", href: "#why" },
+      { label: "National Service Scheme (NSS)", href: "#campus" },
+      { label: "E-Resources", href: "#campus" }
     ]
   },
   { 
@@ -43,8 +54,8 @@ const NAV = [
     href: "#why",
     dropdown: [
       { label: "Guidelines for Admissions", href: "#admissions" },
-      { label: "Student Welfare & Help", href: "#why" },
-      { label: "Scholarships & Aids", href: "#admissions" }
+      { label: "Student Welfare", href: "#why" },
+      { label: "Scholarships", href: "#admissions" }
     ]
   },
   { 
@@ -61,22 +72,30 @@ const NAV = [
     label: "Campus Life", 
     href: "#campus",
     dropdown: [
-      { label: "Alumni Association", href: "#campus" },
+      { label: "Alumni", href: "#campus" },
       { label: "Student Committee", href: "#campus" },
-      { label: "Associations & Clubs", href: "#campus" },
-      { label: "Central Library", href: "#campus" },
-      { label: "E-Resources", href: "#campus" }
+      { label: "Associations", href: "#campus" },
+      { label: "Certificates", href: "#why" }
     ]
   },
   { 
     label: "Exam Cell", 
     href: "#exams",
     dropdown: [
-      { label: "Notices & Circulars", href: "#exams" },
-      { label: "Results Portal", href: "#exams" }
+      { label: "Notices", href: "#exams" },
+      { label: "Results", href: "#exams" }
     ]
   },
-  { label: "Contact", href: "#contact" }
+  { 
+    label: "Admissions", 
+    href: "#admissions",
+    dropdown: [
+      { label: "Enquiry", href: "#admissions" },
+      { label: "Admission Form", href: "#admissions" }
+    ]
+  },
+  { label: "Contact", href: "#contact" },
+  { label: "Gallery", href: "#campus" }
 ];
 
 const COURSES = [
@@ -215,11 +234,11 @@ export default function App() {
             </div>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-2.5 xl:gap-5 mx-2">
+          <nav className="hidden lg:flex items-center gap-1.5 xl:gap-3.5 mx-1">
             {NAV.map((n) => (
               <div key={n.label} className="relative group py-2">
                 <a href={n.href}
-                  className="text-xs xl:text-sm font-bold text-black hover:text-[#800020] transition-colors tracking-wide shrink-0 whitespace-nowrap">
+                  className="text-[11px] xl:text-xs font-bold text-black hover:text-[#800020] transition-colors tracking-wide shrink-0 whitespace-nowrap">
                   {n.label}
                 </a>
                 {n.dropdown && (
@@ -245,12 +264,6 @@ export default function App() {
               </div>
             ))}
           </nav>
-
-          <div className="hidden lg:block shrink-0">
-            <a href="#campus" className="inline-flex items-center justify-center gap-1.5 rounded-full bg-[#800020] px-5 py-2 text-xs xl:text-sm font-bold text-white shadow-soft transition-all hover:scale-[1.03] hover:bg-[#600018] cursor-pointer whitespace-nowrap">
-              Explore Gallery
-            </a>
-          </div>
 
           <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden text-navy p-1" aria-label="Menu">
             {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -303,7 +316,7 @@ export default function App() {
                   )}
                 </div>
               ))}
-              <a href="#campus" onClick={() => setMenuOpen(false)} className="mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-[#800020] px-5 py-2.5 text-sm font-bold text-white shadow-soft hover:bg-[#600018] transition-colors">Explore Gallery</a>
+
             </div>
           </div>
         )}
