@@ -25,17 +25,28 @@ import naacIsoBadge from "@/assets/naac-iso-badge.png";
 const NAV = [
   { label: "Home", href: "#home" },
   { 
-    label: "Academics", 
+    label: "Academic", 
     href: "#academics",
     dropdown: [
       { label: "Courses Offered", href: "#courses" },
       { label: "Departments", href: "#academics" },
       { label: "Faculty", href: "#why" },
       { label: "Academic Calendar", href: "#exams" },
-      { label: "Syllabus Copies", href: "#academics" },
+      { label: "Syllabus", href: "#academics" },
       { label: "Course Plan", href: "#academics" },
       { label: "Choice based credit System", href: "#academics" },
-      { label: "Value Added Courses", href: "#courses" }
+      { label: "Value Added courses", href: "#courses" }
+    ]
+  },
+  { 
+    label: "Courses", 
+    href: "#courses",
+    dropdown: [
+      { label: "Placement Cell", href: "#placements" },
+      { label: "Library", href: "#campus" },
+      { label: "Career Guidance", href: "#why" },
+      { label: "National Service Scheme (NSS)", href: "#campus" },
+      { label: "E-Resources", href: "#campus" }
     ]
   },
   { 
@@ -44,8 +55,7 @@ const NAV = [
     dropdown: [
       { label: "Guidelines for Admissions", href: "#admissions" },
       { label: "Student Welfare", href: "#why" },
-      { label: "Scholarships", href: "#admissions" },
-      { label: "Admission Enquiry", href: "#admissions" }
+      { label: "Scholarships", href: "#admissions" }
     ]
   },
   { 
@@ -62,20 +72,26 @@ const NAV = [
     label: "Campus Life", 
     href: "#campus",
     dropdown: [
-      { label: "Alumni Association", href: "#campus" },
+      { label: "Alumni", href: "#campus" },
       { label: "Student Committee", href: "#campus" },
-      { label: "Associations & Clubs", href: "#campus" },
-      { label: "Central Library", href: "#campus" },
-      { label: "E-Resources", href: "#campus" },
-      { label: "Campus Gallery", href: "#campus" }
+      { label: "Associations", href: "#campus" },
+      { label: "Certificates", href: "#why" }
     ]
   },
   { 
     label: "Exam Cell", 
     href: "#exams",
     dropdown: [
-      { label: "Notices & Circulars", href: "#exams" },
-      { label: "Results Portal", href: "#exams" }
+      { label: "Notices", href: "#exams" },
+      { label: "Results", href: "#exams" }
+    ]
+  },
+  { 
+    label: "Admissions", 
+    href: "#admissions",
+    dropdown: [
+      { label: "Enquiry", href: "#admissions" },
+      { label: "Admission Form", href: "#admissions" }
     ]
   },
   { label: "Contact", href: "#contact" }
@@ -217,7 +233,7 @@ export default function App() {
             </div>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-3.5 xl:gap-6.5 mx-3">
+          <nav className="hidden lg:flex items-center gap-2.5 xl:gap-4.5 mx-2">
             {NAV.map((n) => (
               <div key={n.label} className="relative group py-2">
                 <a href={n.href}
@@ -247,6 +263,12 @@ export default function App() {
               </div>
             ))}
           </nav>
+
+          <div className="hidden lg:block shrink-0">
+            <a href="#campus" className="text-xs xl:text-sm font-bold text-black hover:text-[#800020] transition-colors tracking-wide shrink-0 whitespace-nowrap">
+              Gallery
+            </a>
+          </div>
 
           <button onClick={() => setMenuOpen(!menuOpen)} className="lg:hidden text-navy p-1" aria-label="Menu">
             {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -299,7 +321,7 @@ export default function App() {
                   )}
                 </div>
               ))}
-
+              <a href="#campus" onClick={() => setMenuOpen(false)} className="mt-2 inline-flex items-center justify-center gap-2 text-sm font-bold text-navy hover:text-gold transition-colors py-2.5">Gallery</a>
             </div>
           </div>
         )}
