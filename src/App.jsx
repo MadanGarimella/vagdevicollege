@@ -324,26 +324,20 @@ export default function App() {
         )}
       </header>
 
-      {/* HERO - Single Background Image Model */}
-      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden min-h-[85vh] flex items-center">
-        {/* Background Image with Dark Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img src={heroCampus} alt="Vagdevi Campus" className="h-full w-full object-cover object-center" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/95 via-navy/80 to-navy/35 lg:to-navy/20"></div>
-          {/* Subtle Dots Overlay Grid */}
-          <div className="absolute inset-0 bg-[radial-gradient(#ffffff08_1px,transparent_1px)] [background-size:20px_20px] opacity-40" />
-        </div>
+      <section className="relative pt-32 pb-20 lg:pt-44 lg:pb-32 overflow-hidden min-h-[85vh] flex items-center bg-gradient-soft">
+        {/* Subtle Dots Overlay Grid */}
+        <div className="absolute inset-0 bg-[radial-gradient(rgba(0,0,0,0.04)_1px,transparent_1px)] [background-size:20px_20px] opacity-100 z-0" />
 
         <div className="mx-auto max-w-7xl px-5 lg:px-8 relative z-10 w-full">
           <div className="grid gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
             
             {/* LEFT */}
-            <div className="animate-fade-up">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1 text-xs font-bold text-white border border-white/15 backdrop-blur">
+            <div className="animate-fade-up z-10">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-navy/5 px-3.5 py-1 text-xs font-bold text-navy border border-navy/10">
                 ★ ADMISSIONS OPEN 2026-27
               </span>
 
-              <h1 className="mt-6 font-display text-[2.75rem] sm:text-5xl lg:text-[3.8rem] font-medium leading-[1.1] text-white tracking-tight">
+              <h1 className="mt-6 font-display text-[2.75rem] sm:text-5xl lg:text-[3.8rem] font-medium leading-[1.1] text-navy tracking-tight">
                 Where <span className="italic font-display text-gold">Excellence</span> Meets
                 <br />
                 Opportunity.
@@ -351,14 +345,14 @@ export default function App() {
 
               {/* Custom divider with shield logo */}
               <div className="my-6 flex items-center gap-4">
-                <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-white/20 to-white/10" />
+                <div className="h-[1px] flex-1 bg-gradient-to-r from-transparent via-border to-border" />
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold shadow-soft">
                   <img src={logo} alt="Shield Emblem" className="h-6 w-6 object-contain brightness-0" />
                 </div>
-                <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-white/20 to-white/10" />
+                <div className="h-[1px] flex-1 bg-gradient-to-l from-transparent via-border to-border" />
               </div>
 
-              <p className="max-w-xl text-sm sm:text-base leading-relaxed text-white/80">
+              <p className="max-w-xl text-sm sm:text-base leading-relaxed text-muted-foreground">
                 Vagdevi Degree College (Autonomous) — a premier institution in Narsaraopet, Andhra Pradesh, shaping future-ready graduates through academic rigour, research and industry-integrated learning. Affiliated to Acharya Nagarjuna University.
               </p>
 
@@ -368,21 +362,27 @@ export default function App() {
                   Apply Now <ArrowRight className="h-4 w-4" />
                 </button>
                 <button onClick={() => openEnquiry("brochure")}
-                  className="inline-flex items-center gap-2 rounded-lg border border-white/20 bg-white/10 px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-white shadow-soft hover:bg-white/20 transition-all cursor-pointer backdrop-blur">
+                  className="inline-flex items-center gap-2 rounded-lg border border-navy/20 bg-navy/5 px-6 py-3.5 text-xs sm:text-sm font-bold uppercase tracking-wider text-navy shadow-soft hover:bg-navy/10 transition-all cursor-pointer">
                   <Compass className="h-4 w-4 text-gold" /> Virtual Campus Tour
                 </button>
               </div>
             </div>
 
-            {/* RIGHT - Floating Credentials Glass Card */}
-            <div className="relative animate-fade-up flex justify-center lg:justify-end">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white/10 border border-white/15 p-6 rounded-2xl max-w-md shadow-elegant backdrop-blur-md">
-                <img src={naacIsoBadge} alt="NAAC Accredited B+ Grade & ISO 9001:2015 certified" className="h-16 object-contain mx-auto sm:mx-0 bg-white/90 p-2.5 rounded-xl shadow-soft" />
-                <div className="border-t sm:border-t-0 sm:border-l border-white/10 pt-4 sm:pt-0 sm:pl-4">
+            {/* RIGHT - Credentials & Rectangular Image */}
+            <div className="relative animate-fade-up flex flex-col gap-6 items-center lg:items-start z-10">
+              {/* Accreditations at the top */}
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 bg-white border border-border p-5 rounded-2xl w-full shadow-soft">
+                <img src={naacIsoBadge} alt="NAAC Accredited B+ Grade & ISO 9001:2015 certified" className="h-14 object-contain mx-auto sm:mx-0 bg-white p-2 rounded-xl shadow-soft border border-border" />
+                <div className="border-t sm:border-t-0 sm:border-l border-border pt-4 sm:pt-0 sm:pl-4 flex-1">
                   <div className="text-[10px] font-bold text-gold uppercase tracking-wider">Institution Credentials</div>
-                  <div className="text-sm font-bold text-white mt-0.5">Accredited B+ by NAAC & ISO Certified</div>
-                  <p className="text-xs text-white/70 mt-1 leading-normal font-medium">Meeting standard qualities in academic excellence.</p>
+                  <div className="text-sm font-bold text-navy mt-0.5">Accredited B+ by NAAC & ISO Certified</div>
+                  <p className="text-xs text-muted-foreground mt-1 leading-normal font-medium">Meeting standard qualities in academic excellence.</p>
                 </div>
+              </div>
+
+              {/* Rectangular Image */}
+              <div className="w-full overflow-hidden rounded-3xl border border-border shadow-elegant">
+                <img src={heroCampus} alt="Vagdevi Campus" className="w-full aspect-[4/3] object-cover" />
               </div>
             </div>
 
