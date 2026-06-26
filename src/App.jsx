@@ -225,7 +225,7 @@ export default function App() {
           scrolled ? "glass-card border-b bg-white/95" : "bg-white/90 backdrop-blur-md border-b border-navy/5"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 lg:px-6">
+        <div className="mx-auto flex max-w-7xl items-center justify-between lg:justify-start lg:gap-14 px-4 py-3 lg:px-6">
           <a href="#home" className="flex items-center gap-2.5 shrink-0">
             <img src={logo} alt="Vagdevi Logo" className="h-10 w-10 sm:h-11 sm:w-11 object-contain" />
             <div className="leading-tight">
@@ -234,7 +234,7 @@ export default function App() {
             </div>
           </a>
 
-          <nav className="hidden lg:flex items-center gap-2.5 xl:gap-4.5 mx-2">
+          <nav className="hidden lg:flex items-center gap-3 xl:gap-5 ml-8 mr-auto">
             {NAV.map((n) => (
               <div key={n.label} className="relative group py-2">
                 <a href={n.href}
